@@ -94,7 +94,7 @@ public class PLaunchApp {
                 String verJsonDir = Tools.DIR_HOME_VERSION + downVName + ".json";
 
                 JAssets assets = null;
-
+/*
                 UIKit.updateProgressSafe(0, "Downloading version list");
                 try {
                     mVersionList = Tools.GLOBAL_GSON.fromJson(DownloadUtils.downloadString("https://launchermeta.mojang.com/mc/game/version_manifest.json"), JMinecraftVersionList.class);
@@ -102,15 +102,18 @@ public class PLaunchApp {
                     UIKit.updateProgressSafe(0, "Error: " + e.getMessage());
                     e.printStackTrace();
                 }
-
+*/
                 verInfo = findVersion(mcver);
+/*
                 if (verInfo.url != null && !new File(verJsonDir).exists() && mVersionList != null) {
                     // mVersionList != null is for checking if user have network connection
                     UIKit.updateProgressSafe(0, "Downloading " + mcver + ".json");
                     Tools.downloadFile(verInfo.url, verJsonDir);
                 }
+*/
 
                 mVersion = verInfo = Tools.getVersionInfo(mcver);
+/*
                 try {
                     UIKit.updateProgressSafe(0, "Downloading " + mcver + ".json assets info");
                     assets = downloadIndex(verInfo.assets, new File(Tools.ASSETS_PATH, "indexes/" + verInfo.assets + ".json"));
@@ -169,8 +172,7 @@ public class PLaunchApp {
                     mIsAssetsProcessing = true;
                     downloadAssets(assets, verInfo.assets, assets.map_to_resources ? new File(Tools.OBSOLETE_RESOURCES_PATH) : new File(Tools.ASSETS_PATH));
                 }
-
-                // TODO download assets
+*/
 
             } catch (IOException e) {
                 UIKit.updateProgressSafe(currProgress / maxProgress, "Download error, skipping");
