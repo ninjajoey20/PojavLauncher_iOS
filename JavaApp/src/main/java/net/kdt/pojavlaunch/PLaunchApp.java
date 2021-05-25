@@ -174,7 +174,7 @@ public class PLaunchApp {
                 }
 */
 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 UIKit.updateProgressSafe(currProgress / maxProgress, "Download error, skipping");
                 e.printStackTrace();
             }
