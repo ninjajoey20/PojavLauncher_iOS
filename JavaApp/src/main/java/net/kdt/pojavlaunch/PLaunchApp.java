@@ -102,9 +102,9 @@ public class PLaunchApp {
                     UIKit.updateProgressSafe(0, "Error: " + e.getMessage());
                     e.printStackTrace();
                 }
-*/
+
                 verInfo = findVersion(mcver);
-/*
+
                 if (verInfo.url != null && !new File(verJsonDir).exists() && mVersionList != null) {
                     // mVersionList != null is for checking if user have network connection
                     UIKit.updateProgressSafe(0, "Downloading " + mcver + ".json");
